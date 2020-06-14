@@ -1,17 +1,46 @@
+<div class="hero-wrap js-fullheight" style="background-image: url('assets/images/bg_2.jpg');">
+  <div class="overlay"></div>
+  <div class="container" id="containerhome">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+      <div class="col-md-9 ftco-animate text-center" >
+        <p class="breadcrumbs" ><span class="mr-2"><a routerLink="../home">Home</a></span> <span>Admin</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="ftco-section contact-section ftco-degree-bg">
+  <div class="container">
+      <div class="row block-9">
+          <div class="col-md-6 pr-md-5">
 <table class="table">
-    <thead>
+    <thead class="thead-dark">
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">nom</th>
-        
-        <th scope="col">mail</th>
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Tel</th>
+        <th scope="col">Email</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor = " let client of clients">
-        <th scope="row"> {{client.id}}</th>
+      <tr *ngFor="let client of clients">
+        <th scope="row" >{{client.id}}</th>
         <td>{{client.nom}}</td>
-        <td>{{client.mail}}</td>
-      </tr>
-    </tbody>
+        <td>{{client.tel}}</td>
+        <td>{{client.email}}</td>
+      </tr> 
+      </tbody>
   </table>
+  
+</div>
+
+        
+</div>
+</div>
+</section>
+
+
+
+
+
+
+

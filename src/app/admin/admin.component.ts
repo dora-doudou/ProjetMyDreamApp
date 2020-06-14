@@ -7,21 +7,29 @@ import { Admin } from '../class/admin';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
+
+
 export class AdminComponent implements OnInit {
-admin = new Admin;
+  clients : any;
+  admin = new Admin;
+
   constructor(private adm : ClientService) { }
 
   ngOnInit() {
     this.getcl();
   }
-  clients : any;
+
+  
 getcl(){
   return this.adm.client()
   .subscribe(
     res=>
     {
       this.clients = res;
-      console.log(res)
+      console.log(res);
+    },
+    err => {
+      console.log ("erreur");
     }
   )
 }

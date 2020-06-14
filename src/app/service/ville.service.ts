@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
-import{HttpClient} from '@angular/common/http';
-import { from } from 'rxjs';
+import {HttpClient,HttpBackend} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {Ville} from '../class/ville'
 
 @Injectable({
   providedIn: 'root'
 })
 export class VilleService {
 
-  constructor(private http : HttpClient) { }
-  url = "https://www.freedomtravel.tn/json/ville.php"
-  
-  getville(){
-    return this.http.get(this.url);
+  url='https://www.freedomtravel.tn/ng/villes.php';
+
+  constructor( private http: HttpClient, private handler : HttpBackend) { 
+ this.http=new HttpClient(handler);
+}
+
+getville(): Observable<Ville[]>{
+    return this.http.get<Ville[]>(this.url)
+    
   }
 }

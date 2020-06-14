@@ -5,8 +5,10 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { VoyagesComponent } from './voyages/voyages.component';
 import { SoireesComponent } from './soirees/soirees.component';
 import { ContactComponent } from './contact/contact.component';
+
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+
 import { CircuitComponent } from './circuit/circuit.component';
 
 import { GuardGuard } from './guard.guard';

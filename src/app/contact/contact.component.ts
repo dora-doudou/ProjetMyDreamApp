@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact} from '../class/contact';
 import { ContactService } from '../service/contact.service';
-import { FormBuilder, Validator, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,29 +9,42 @@ import { FormBuilder, Validator, Validators } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
 export class ContactComponent implements OnInit {
+
   contact = new Contact;
   constructor( private contactservices : ContactService , private form : FormBuilder) { }
   contactforms = this.form.group({
-    nom : [''],
+    nom : ['', Validators.required],
     email : [''],
     tel : [''],
     sujet : [''],
     message : ['']
 });
   ngOnInit() {
-    this.onSubmit();
+  //  this.onSubmit();
   }
 
-  addcontact(){
+  /*addcontact(){
     console.log(this.contact)
     this.contactservices.addcontac(this.contact)
     .subscribe (
       res=>
       { console.log(res) } )
-  }
+  }*/
 
 onSubmit(){
-  console.log(this.contactforms.value);
+ //console.log(this.contactforms.value);
+
+ this.contactservices.addcontac(this.contactforms.value)
+ .subscribe(
+  res => {
+   console.log(res);
+  },
+  err => {
+    console.log ("erreur");
+  }
+)
+ 
 }
 }
