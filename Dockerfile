@@ -1,10 +1,11 @@
-#stage 1
-FROM node:latest as node
+#stage 1 : Environnement node.JS
+FROM node:latest as build-step
 WORKDIR /app
-COPY . .
+COPY package.json ./
 RUN npm install
-RUN npm run build --prod
+COPY . .
+RUN npm run build
 
-#stage 1
+#stage 2 : Application web MyDreamApp
 FROM nginx:alpine
-COPY --from=node /app/dist/my-dream-app /usr/share/nginx/html
+COPY --from=build-step /app/dist/my-dream-app /usr/share/nginx/html
