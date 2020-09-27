@@ -1,6 +1,5 @@
 #!/bin/sh
 git add .
 git commit -m "3 commit"
-git remote add origin https://github.com/dora-doudou/ProjetMyDreamApp.git
 git push --force origin master
 echo "commit réalisé"
