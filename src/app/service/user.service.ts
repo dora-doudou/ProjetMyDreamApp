@@ -3,9 +3,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../class/user';
 import { Router } from '@angular/router';
-const hhtpOptions={
-  headers : new HttpHeaders ({'Content-type' : 'application/json' })
-};
+
+const hhtpOptions={ headers : new HttpHeaders ({'Content-type' : 'application/json' })};
 
 const apiUrl = "http://myfreedobt.cluster011.ovh.net/api/login_check";
 

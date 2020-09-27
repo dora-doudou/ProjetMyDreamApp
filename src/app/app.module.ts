@@ -15,7 +15,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { LogoutComponent } from './logout/logout.component';
-import { TokenInterceptorService } from './token-interceptor.service';
+import { TokenInterceptorService } from './service/token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotelSingleComponent } from './hotel-single/hotel-single.component';
 import { SafePipeModule } from 'safe-pipe';

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CircuitService } from './circuit.service';
+import { CircuitService } from './service/circuit.service';
 
 describe('CircuitService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

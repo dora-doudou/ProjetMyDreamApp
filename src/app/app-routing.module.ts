@@ -5,16 +5,11 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { VoyagesComponent } from './voyages/voyages.component';
 import { SoireesComponent } from './soirees/soirees.component';
 import { ContactComponent } from './contact/contact.component';
-
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
-
 import { CircuitComponent } from './circuit/circuit.component';
-
 import { GuardGuard } from './guard.guard';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
-
-
 
 const routes: Routes = [
   {path : '',component:HomeComponent},
@@ -26,8 +21,8 @@ const routes: Routes = [
   {path : 'login' , component : LoginComponent},
   {path : 'hotels/:id',component:HotelDetailsComponent},
   {path : 'circuit',component:CircuitComponent},
-  {path : 'admin' , component : AdminComponent, canActivate : [GuardGuard]}
-
+  //{path : 'admin' , component : AdminComponent, canActivate : [GuardGuard]}
+  {path : 'admin1' , component : AdminComponent}
 
 ];
 

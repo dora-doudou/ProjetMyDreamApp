@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-
 export class VoyagesService {
 
   constructor(private http: HttpClient, private handler : HttpBackend) { 
@@ -19,8 +18,4 @@ export class VoyagesService {
       return this.http.get<Voyages>(this.url)
     
    }
-
-
-
-
 }

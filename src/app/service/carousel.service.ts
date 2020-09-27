@@ -15,20 +15,21 @@ const url= 'https://www.freedomtravel.tn/ng/carouselHotel.php';
 export class CarouselService {
   carousel = new Carousel;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private handler : HttpBackend) { }
   hoturl = 'https://freedomtravel.tn/json/hotels.php';
   
   vilurl = "https://www.freedomtravel.tn/json/ville.php";
 
-
-  getcarousel(carousel:Carousel): Observable<Carousel>{
-    return this.http.post<Carousel>(url, carousel, hhtpOptions)
+getcarousel(carousel:Carousel): Observable<Carousel>{
+  return this.http.post<Carousel>(url, carousel, hhtpOptions)
 }
+
 gethotels(){
   return this.http.get(this.hoturl);
-    }
+}
   
-  getville(){
-    return this.http.get(this.vilurl);
-  }
+getville(){
+  return this.http.get(this.vilurl);
+}
+
 }
