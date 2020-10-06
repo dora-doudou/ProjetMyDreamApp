@@ -17,12 +17,12 @@ import { AdminComponent } from './admin/admin.component';
 import { LogoutComponent } from './logout/logout.component';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HotelSingleComponent } from './hotel-single/hotel-single.component';
 import { SafePipeModule } from 'safe-pipe';
 import { HotelDetailsComponent } from './hotel-details/hotel-details.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { CircuitComponent } from './circuit/circuit.component';
+import { RechercheComponent } from './recherche/recherche.component';
 
 
 
@@ -41,9 +41,9 @@ import { CircuitComponent } from './circuit/circuit.component';
     LoginComponent,
     AdminComponent,
     LogoutComponent,
-    HotelSingleComponent,
     HotelDetailsComponent,
     CircuitComponent,
+    RechercheComponent,
   ],
   imports: [
     BrowserModule,

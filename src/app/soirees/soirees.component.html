@@ -3,12 +3,13 @@
     <div class="container" id="containerhome">
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-9  text-center" data-scrollax=" properties: { translateY: '0%' }">
-          <p class="breadcrumbs" ><span class="mr-2"><a routerLink="index.html">Home</a></span> <span>Hotel</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
+          <p class="breadcrumbs" ><span class="mr-2"><a routerLink="index.html">Home</a></span> <span>Soirées</span></p>
+          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Soirées</h1>
         </div>
       </div>
     </div>
 </div>
+
 <br> <br>
 <div class="card mb-3">
     <img src="assets/images/soiree1.png" class="card-img-top" alt="..." style="width: 50%; padding-right: 10%"  >
@@ -23,3 +24,58 @@
   </div>
   </div>
 
+<!-- 
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+<div class="col-lg-3 sidebar">
+      <app-recherche></app-recherche>
+</div>
+        <div class="col-lg-9">
+      
+<div class="card card-cascade wider reverse" *ngFor="let soiree of soirees" >
+
+ 
+  <div class="view view-cascade overlay" >
+    <img class="card-img-top" src="https://www.freedomtravel.tn/assets/images/4/{{soiree.id}}/{{soiree.nom}}" alt="Card image cap">
+    <a href="#">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+ 
+  <div class="card-body card-body-cascade ">
+
+ 
+    <h3 class="card-title text-center"><strong>{{soiree.titre}}</strong></h3>
+ 
+    <h5 class="font-weight-bold indigo-text py-2 text-center"><ins> L'offre Comprend : </ins></h5>
+ 
+    <div class="row text-left">
+      <div class="col-md-6 col-sm-6 ">
+   <br>- Séjour à l'hôtel en LPD.<br>
+      </div>
+    
+    <div class="col-md-3 col-sm-3 ">
+      <div class="price-box">
+        <h6 class="price">
+          <strong> A partir
+          <ins>{{soiree.prix}}</ins>DT</strong>
+          </h6>
+      </div>
+        </div>
+    </div>
+    
+  </div>
+  <div class="card-footer card-footer-cascade text-right ">
+   
+    <button class="btn blue-gradient">Réservation</button>
+      
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</section>  
+-->

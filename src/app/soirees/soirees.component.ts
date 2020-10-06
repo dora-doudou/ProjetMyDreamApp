@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{  SoireesService } from '../service/soirees.service';
+import { Soirees } from '../class/soirees';
 
 @Component({
   selector: 'app-soirees',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoireesComponent implements OnInit {
 
-  constructor() { }
+  constructor( private soireesserv : SoireesService) { }
 
-  ngOnInit() {
+  Soiree:Soirees;
+ // Soiree1:any;
+  //Soiree2:any;
+
+  ngOnInit() { 
+    //this.hetlsoirees();  
   }
+/*
+  hetlsoirees(){
+    this.soireesserv.getSoirees()
+    .subscribe(
+      res => {
+        console.log(res);
+       this.Soiree=res;
+  
+      },
+      err => {
+        console.log ("erreur");
+      }
+    )
+   
+  }*/
 
 }

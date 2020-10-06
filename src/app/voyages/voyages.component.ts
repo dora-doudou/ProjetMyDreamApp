@@ -10,11 +10,29 @@ import { Voyages } from '../class/voyages';
 })
 export class VoyagesComponent implements OnInit {
 
-  constructor( private ville : VoyagesService ) { }
+  constructor( private voyageserv : VoyagesService) { }
 
-  ngOnInit() {
-    this.ville.getVoyages()
+  voyages:Voyages;
+  //voyage1:any;
+  //voyage2:any;
 
+  ngOnInit() { this.hetlvoyages(); }
+
+
+  hetlvoyages(){
+    this.voyageserv.getVoyages()
+    .subscribe(
+      res => {
+        console.log(res);
+       this.voyages=res;
+  
+      },
+      err => {
+        console.log ("erreur");
+      }
+    )
+   
   }
+
 
 }

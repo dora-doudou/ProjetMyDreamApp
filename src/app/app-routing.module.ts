@@ -21,8 +21,7 @@ const routes: Routes = [
   {path : 'login' , component : LoginComponent},
   {path : 'hotels/:id',component:HotelDetailsComponent},
   {path : 'circuit',component:CircuitComponent},
-  //{path : 'admin' , component : AdminComponent, canActivate : [GuardGuard]}
-  {path : 'admin1' , component : AdminComponent}
+  {path : 'admin' , component : AdminComponent, canActivate : [GuardGuard]}
 
 ];
 

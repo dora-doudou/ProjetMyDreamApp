@@ -1,145 +1,115 @@
 <div class="hero-wrap js-fullheight" style="background-image: url('assets/images/bg_5.jpg');">
-    <div class="overlay"></div>
-    <div class="container" id="containerhome">
-      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-        <div class="col-md-9  text-center" data-scrollax=" properties: { translateY: '0%' }">
-          <p class="breadcrumbs" ><span class="mr-2"><a routerLink="index.html">Home</a></span> <span>Hotel</span></p>
-          <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Hotels</h1>
-        </div>
+  <div class="overlay"></div>
+  <div class="container" id="containerhome">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center" >
+        <p class="breadcrumbs" ><span class="mr-2"><a routerLink="../home">Home</a></span> <span>Hotel</span></p>
+        <h1 class="mb-3 bread" >Hotels</h1>
       </div>
     </div>
+  </div>
 </div>
-  <section class="ftco-section ftco-degree-bg">
+
+<section class="ftco-section ftco-degree-bg">
     <div class="container">
       <div class="row">
-          <div class="col-lg-3 sidebar">
-              <div class="sidebar-wrap bg-light ">
-                  <h3 class="heading mb-4">Find City</h3>
-                  <form action="#">
-                      <div class="fields" >
-                    <div class="form-group" >
-                      <input type="text" class="form-control" placeholder="Destination, City">
-                    </div>
-                    <div class="form-group"  >
-                      <div class="select-wrap one-third" >
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="ville" id="" class="form-control" placeholder="Keyword search">
-                        <option *ngFor=" let villa of ville ">{{villa.nom}}</option>
-
-                      </select>
-                    </div>
-                    </div>
-                  
-                    <!--  <div class="form-group">
-                      <label for="date-in-out">date in out</label>
-                        <input type="text" id="date-in-out" name="date-in-out" bsDaterangepicker [(ngModel)]="date-in-out" class="form-control" placeholder="check_out">
-                      </div>-->  
-
-                    <div class="form-group">
-                        <div class="range-slider">
-                            <span>
-                                          <input type="number" value="25000" min="0" max="120000"/>	-
-                                          <input type="number" value="50000" min="0" max="120000"/>
-                                        </span>
-                                        <input value="1000" min="0" max="120000" step="500" type="range"/>
-                                        <input value="50000" min="0" max="120000" step="500" type="range"/>
-                                      </div>
-                    </div>
-                    <div class="form-group">
-                      <input type="submit" value="Search" class="btn btn-primary py-3 px-5">
-                    </div>
-                  </div>
-              </form>
-              </div>
-              <div class="sidebar-wrap bg-light ftco-animate">
-                  <h3 class="heading mb-4">Star Rating</h3>
-                  <form method="post" class="star-rating">
-                            <div class="form-check">
-                                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                  <label class="form-check-label" for="exampleCheck1">
-                                      <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span></p>
-                                  </label>
-                            </div>
-                            <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">
-                                 <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i></span></p>
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">
-                                <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-                           </label>
-                            </div>
-                            <div class="form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">
-                                <p class="rate"><span><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">
-                                <p class="rate"><span><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i></span></p>
-                              </label>
-                            </div>
-                          </form>
-              </div>
+<div class="col-lg-3 sidebar">
+  <div class="sidebar-wrap bg-light">
+      <h3 class="heading mb-4">Find destination</h3>
+      <form action="#">
+        <div class="fields">
+        <div class="form-group">
+          <div class="select-wrap one-third">
+          <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+          <select   name="destination" class="form-control" placeholder="Keyword search" #destination
+          (change)='getdestination(destination.value)'>
+            <option value="">Where</option>
+            <option *ngFor='let villes of ville' value="{{villes.nom}}"  >{{villes.nom}}</option>
+        </select>
         </div>
-        <div class="col-lg-9">
-            <div class="row">
-                <div class="col-md-4 ftco-animate" *ngFor = "let hot of hotel">
-                          <div class="destination">
-                              <a routerLink="hotel-single.html" class="card img img-2 d-flex justify-content-center align-items-center" [style.background-image]="'url('+'https://freedomtravel.tn/assets/images/hotel_miniature/'+hot.id+'.jpg'+')' | safe:'style'">
-                          
-                              </a>
-                              <div class="text p-3">
-                                  <div class="d-flex">
-                                      <div class="one">
-                                          <h3><a routerLink="hotel-single.html">{{hot.nom}}</a></h3>
-                                          <p class="rate row" *ngIf="hot.categorie =='5'"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
-                                          </p>
-                                          <p class="rate row" *ngIf="hot.categorie =='4'"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i>
-                                          </p>
-                                          <p class="rate row" *ngIf="hot.categorie =='3'"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i>
-                                          </p>
-                                          <p class="rate row" *ngIf="hot.categorie =='2'"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star-o"></i><i class="icon-star-o"></i><i class="icon-star-o"></i>
-                                          </p>
-                                      </div>
-                                  </div>
-                                  <span class="price per-price" *ngIf="hot.lpdvente !='0' ">{{hot.lpdvente}} DT /LPD<br></span>
-                                  <span class="price per-price" *ngIf="hot.dpvente !='0' ">{{hot.dpvente}} DT /DP<br></span>
-                                  <span class="price per-price" *ngIf="hot.pcvente != '0' ">{{hot.pcvente}} DT /PC<br></span>
-                                  <span class="price per-price" *ngIf="hot.allinsoftvente !='0' ">{{hot.allinsoftvente}} DT /All In Soft<br></span>
-                                  <span class="price per-price" *ngIf="hot.allinvente !='0' ">{{hot.allinvente}} DT /All In<br></span>
-                                  <hr>
-                                  <p class="bottom-area d-flex justify-content-between">{{hot.ville}}
-                                      <span class="ml-auto"><a routerLink="/hotels/{{hot.id}}">Détails</a></span>
-                                  </p>
-                                  
+        </div>
+      <!--  <div class="form-group">
+         <div class="input-group">
+            <ejs-daterangepicker  [format]='dateFormat' separator='to' id='daterangepicker' placeholder='Select a range' [(startDate)]='start' [(endDate)]='end'  #date
+            (change)='getdate(date.value)' ></ejs-daterangepicker>
+          </div>
+        </div>-->
+        <div class="form-group">
+          <button type="button" value="Search" (click)="rechercher()" class="btn btn-primary py-3 px-5"> Rechercher</button>
+        </div>
+        </div>
+      </form>
 
-                              </div>
-                          </div>
-                      </div>
-                     
-            </div>
-            <div class="row mt-5">
-                <div class="col text-center">
-                  <div class="block-27">
-                    <ul>
-                      <li><a routerLink="#">&lt;</a></li>
-                      <li class="active"><span>1</span></li>
-                      <li><a routerLink="#">2</a></li>
-                      <li><a routerLink="#">3</a></li>
-                      <li><a routerLink="#">4</a></li>
-                      <li><a routerLink="#">5</a></li>
-                      <li><a routerLink="#">&gt;</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-        </div> <!-- .col-md-8 -->
-      </div>
+  </div>
+ 
+    
+</div>
+      <div class="col-lg-9">
+          <div class="row">
+              <div class="col-md-4 ftco-animate" *ngFor='let hotel of hotel' >
+                        <div class="destination" >
+                     <a routerLink="/hotels/{{hotel.id}}" class="img img-2 d-flex justify-content-center align-items-center" [style.background-image]="'url('+' https://www.freedomtravel.tn/assets/images/hotel_miniature/'+hotel.id+'.jpg '+')' | safe: 'style'"></a>
+                         
+                      
+                            <div class="text p-3">
+                                <div class="d-flex">
+                                    <div class="one">
+                                        <h3><a routerLink="/hotels/{{hotel.id}}">{{hotel.nom}} </a></h3>
+                                        <p class="rate">
+                                            <span class="star" *ngIf="hotel.categorie == '2'">
+                                                  <i class="icon-star"></i>
+                                                  <i class="icon-star"></i>
+                                                  <i class="icon-star-o"></i>
+                                                  <i class="icon-star-o"></i>
+                                                  <i class="icon-star-o"></i>
+
+                                                  {{hotel.categorie}} Rating</span>
+    
+                                          <span class="star" *ngIf="hotel.categorie == '3'">
+                                          <i class="icon-star"></i>
+                                            <i class="icon-star"></i>
+                                            <i class="icon-star"></i>
+                                            <i class="icon-star-o"></i>
+                                            <i class="icon-star-o"></i>
+
+                                            {{hotel.categorie}} Rating</span>
+                                            <span class="star" *ngIf="hotel.categorie == '4'">
+                                              <i class="icon-star"></i>
+                                              <i class="icon-star"></i>
+                                              <i class="icon-star"></i>
+                                              <i class="icon-star"></i>
+                                              <i class="icon-star-o"></i>
+
+                                              {{hotel.categorie}} Rating</span>
+                                              <span class="star" *ngIf="hotel.categorie == '5'">
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                                <i class="icon-star"></i>
+                                              <i class="icon-star"></i>
+                                                {{hotel.categorie}} Rating</span>
+                                        </p>
+                                    </div>
+                                    <div class="two">
+                                        <span class="price per-price" *ngIf="hotel.lpdvente != '0' ">{{hotel.lpdvente}} <small>LPD/night</small><br></span>
+                                        <span class="price per-price" *ngIf="hotel.dpvente != '0' ">{{hotel.dpvente}} <small>DP/night</small><br></span>
+                                         <span class="price per-price" *ngIf="hotel.pcvente != '0' ">{{hotel.pcvente}} <small>PC/night</small><br></span>
+                                      </div>
+                                </div>
+                                <p class="bottom-area d-flex">
+                                   <span><i class="icon-map-o"></i> {{hotel.ville}}</span> 
+                                </p>
+                                <hr>
+                                
+                                    <span class="ml-auto text-left"><a routerLink="/hotels/{{hotel.id}}">book now</a></span>
+                               
+                            </div>
+                        </div>
+                    </div>
+                   
+          </div>
+          
+      </div> <!-- .col-md-8 -->
     </div>
-  </section> <!-- .section -->
+  </div>
+</section> <!-- .section -->

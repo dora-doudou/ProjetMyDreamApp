@@ -1,0 +1,29 @@
+<div class="sidebar-wrap bg-light">
+    <h3 class="heading mb-4">Find destination</h3>
+    <form action="#">
+      <div class="fields">
+      <div class="form-group">
+        <div class="select-wrap one-third">
+        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+        <select   name="destination" class="form-control" placeholder="Keyword search" #destination
+        (change)='getdestination(destination.value)'>
+          <option value="">Where</option>
+          <option *ngFor='let villes of ville' value="{{villes.nom}}"  >{{villes.nom}}</option>
+      </select>
+      </div>
+      </div>
+
+ <!-- <div class="form-group">
+       <div class="input-group">
+          <ejs-daterangepicker  [format]='dateFormat' separator='to' id='daterangepicker' placeholder='Select a range' [(startDate)]='start' [(endDate)]='end'  #date
+          (change)='getdate(date.value)' ></ejs-daterangepicker>
+        </div>
+      </div>-->
+
+      <div class="form-group">
+        <button type="button" value="Search" (click)="rechercher()" class="btn btn-primary py-3 px-5"> Rechercher</button>
+      </div>
+      </div>
+    </form>
+
+</div>
